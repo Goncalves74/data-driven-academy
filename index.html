@@ -2,211 +2,2325 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Factory Intelligence Academy</title>
+    <meta charset="UTF-8">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0F172A;
-      color: white;
-      text-align: center;
-    }
+    <meta
+        name="description"
+        content="Factory Intelligence Academy. Transforming Factory Data into Business Decisions. Power BI for Manufacturing launches on 1 October 2026."
+    >
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-    }
+    <meta
+        name="theme-color"
+        content="#071426"
+    >
 
-    .logo {
-      font-size: 18px;
-      letter-spacing: 4px;
-      color: #38BDF8;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+    <title>
+        Factory Intelligence Academy | Power BI for Manufacturing
+    </title>
 
-    .brand {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
+    <style>
 
-    .tagline {
-      font-size: 22px;
-      color: #CBD5E1;
-      margin-bottom: 50px;
-    }
+        /* ============================================================
+           CONFIGURAÇÕES GERAIS
+        ============================================================ */
 
-    .course {
-      font-size: 42px;
-      font-weight: 700;
-      color: #00AEEF;
-      margin-bottom: 15px;
-    }
+        :root {
+            --navy-dark: #071426;
+            --navy: #0F172A;
+            --navy-light: #16253D;
+            --blue: #00AEEF;
+            --blue-light: #38BDF8;
+            --blue-dark: #0284C7;
+            --cyan-soft: #BAE6FD;
+            --white: #FFFFFF;
+            --metal: #CBD5E1;
+            --grey: #94A3B8;
+            --grey-dark: #64748B;
+            --card: rgba(15, 23, 42, 0.78);
+            --border: rgba(56, 189, 248, 0.22);
+            --success: #10B981;
+        }
 
-    .subtitle {
-      font-size: 24px;
-      margin-bottom: 40px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .launch {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .date {
-      font-size: 42px;
-      font-weight: bold;
-      color: #38BDF8;
-      margin-bottom: 40px;
-    }
+        body {
+            font-family:
+                "Segoe UI",
+                Inter,
+                Arial,
+                sans-serif;
 
-    .counter {
-      font-size: 30px;
-      margin-bottom: 50px;
-    }
+            background: var(--navy-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .button {
-      display: inline-block;
-      background: #00AEEF;
-      color: white;
-      padding: 18px 35px;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.3s;
-    }
+        a {
+            color: inherit;
+        }
 
-    .button:hover {
-      background: #0284C7;
-      transform: translateY(-2px);
-    }
+        section {
+            scroll-margin-top: 90px;
+        }
 
-    .note {
-      margin-top: 40px;
-      color: #94A3B8;
-    }
+        /* ============================================================
+           FUNDO DECORATIVO
+        ============================================================ */
 
-    @media (max-width: 700px) {
-      .brand {
-        font-size: 38px;
-      }
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
 
-      .course {
-        font-size: 30px;
-      }
+            background-image:
+                linear-gradient(
+                    rgba(56, 189, 248, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(56, 189, 248, 0.035) 1px,
+                    transparent 1px
+                );
 
-      .tagline {
-        font-size: 18px;
-      }
+            background-size: 55px 55px;
+            pointer-events: none;
+        }
 
-      .subtitle {
-        font-size: 20px;
-      }
+        .background-glow {
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            filter: blur(130px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -2;
+        }
 
-      .date {
-        font-size: 32px;
-      }
+        .glow-one {
+            background: var(--blue);
+            top: -260px;
+            right: -220px;
+        }
 
-      .counter {
-        font-size: 22px;
-      }
+        .glow-two {
+            background: #1D4ED8;
+            bottom: -300px;
+            left: -250px;
+        }
 
-      .hero {
-        padding: 25px;
-      }
-    }
-  </style>
+        /* ============================================================
+           NAVEGAÇÃO
+        ============================================================ */
+
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+            background: rgba(7, 20, 38, 0.88);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+        }
+
+        .navigation-container {
+            width: min(1180px, 92%);
+            min-height: 74px;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        /* ============================================================
+           LOGÓTIPO TEXTUAL
+        ============================================================ */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+            min-width: 0;
+        }
+
+        .logo-symbol {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.42);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0, 174, 239, 0.20),
+                    rgba(15, 23, 42, 0.85)
+                );
+
+            box-shadow:
+                0 0 25px rgba(0, 174, 239, 0.15);
+        }
+
+        .logo-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 22px;
+        }
+
+        .logo-bars span {
+            display: block;
+            width: 5px;
+            border-radius: 2px 2px 0 0;
+            background: linear-gradient(
+                to top,
+                var(--blue),
+                var(--blue-light)
+            );
+        }
+
+        .logo-bars span:nth-child(1) {
+            height: 9px;
+        }
+
+        .logo-bars span:nth-child(2) {
+            height: 15px;
+        }
+
+        .logo-bars span:nth-child(3) {
+            height: 22px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .logo-academy {
+            margin-top: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: var(--blue-light);
+        }
+
+        /* ============================================================
+           MENU
+        ============================================================ */
+
+        .navigation-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navigation-links a {
+            position: relative;
+            text-decoration: none;
+            color: var(--metal);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        .navigation-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: var(--blue-light);
+            transition: width 0.25s ease;
+        }
+
+        .navigation-links a:hover {
+            color: var(--white);
+        }
+
+        .navigation-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            padding: 130px 4% 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at 75% 35%,
+                    rgba(0, 174, 239, 0.14),
+                    transparent 37%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(7, 20, 38, 0.98),
+                    rgba(15, 23, 42, 0.96),
+                    rgba(10, 36, 66, 0.94)
+                );
+        }
+
+        .hero-container {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1.18fr 0.82fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .status-badge {
+            width: fit-content;
+            margin-bottom: 25px;
+            padding: 8px 14px;
+
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            border: 1px solid rgba(56, 189, 248, 0.30);
+            border-radius: 999px;
+
+            background: rgba(0, 174, 239, 0.08);
+            color: var(--cyan-soft);
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+
+            box-shadow:
+                0 0 0 5px rgba(16, 185, 129, 0.12),
+                0 0 14px rgba(16, 185, 129, 0.65);
+        }
+
+        .hero-eyebrow {
+            margin-bottom: 12px;
+            color: var(--blue-light);
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin-bottom: 23px;
+
+            font-size: clamp(44px, 6vw, 76px);
+            line-height: 0.98;
+            letter-spacing: -2.5px;
+            font-weight: 800;
+        }
+
+        .hero h1 .highlight {
+            display: block;
+            margin-top: 9px;
+
+            color: transparent;
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue-light),
+                    var(--blue),
+                    #60A5FA
+                );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 690px;
+            margin-bottom: 16px;
+
+            font-size: clamp(20px, 2.2vw, 28px);
+            line-height: 1.3;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            margin-bottom: 34px;
+
+            color: var(--metal);
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .button {
+            min-height: 52px;
+            padding: 14px 24px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            border-radius: 9px;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 750;
+            letter-spacing: 0.4px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .button-primary {
+            color: var(--navy-dark);
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue-light),
+                    var(--blue)
+                );
+
+            box-shadow:
+                0 15px 40px rgba(0, 174, 239, 0.20);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 19px 46px rgba(0, 174, 239, 0.30);
+        }
+
+        .button-secondary {
+            color: var(--white);
+            border: 1px solid rgba(203, 213, 225, 0.27);
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .button-secondary:hover {
+            transform: translateY(-3px);
+            border-color: var(--blue-light);
+            background: rgba(56, 189, 248, 0.07);
+        }
+
+        .arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* ============================================================
+           CARTÃO DE LANÇAMENTO
+        ============================================================ */
+
+        .launch-panel {
+            position: relative;
+            overflow: hidden;
+
+            padding: 34px;
+            border-radius: 20px;
+
+            border: 1px solid rgba(56, 189, 248, 0.24);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(21, 45, 75, 0.94),
+                    rgba(8, 24, 44, 0.93)
+                );
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.34);
+        }
+
+        .launch-panel::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -110px;
+            right: -90px;
+            border-radius: 50%;
+            background: rgba(0, 174, 239, 0.16);
+            filter: blur(15px);
+        }
+
+        .launch-label {
+            position: relative;
+            display: block;
+            margin-bottom: 9px;
+
+            color: var(--grey);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .launch-date {
+            position: relative;
+            margin-bottom: 8px;
+
+            color: var(--white);
+            font-size: clamp(27px, 3vw, 39px);
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        .launch-note {
+            position: relative;
+            margin-bottom: 28px;
+            color: var(--blue-light);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .countdown-heading {
+            margin-bottom: 13px;
+            color: var(--metal);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+        }
+
+        .countdown-item {
+            min-width: 0;
+            padding: 14px 5px 12px;
+
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.14);
+            background: rgba(255, 255, 255, 0.035);
+
+            text-align: center;
+        }
+
+        .countdown-number {
+            display: block;
+            color: var(--white);
+            font-size: clamp(22px, 3vw, 31px);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .countdown-text {
+            display: block;
+            margin-top: 7px;
+            color: var(--grey);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .panel-divider {
+            height: 1px;
+            margin: 27px 0;
+            background: rgba(203, 213, 225, 0.13);
+        }
+
+        .panel-features {
+            display: grid;
+            gap: 12px;
+        }
+
+        .panel-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--metal);
+            font-size: 13px;
+        }
+
+        .panel-check {
+            width: 23px;
+            height: 23px;
+            flex: 0 0 23px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.12);
+            color: #6EE7B7;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* ============================================================
+           SECÇÕES GERAIS
+        ============================================================ */
+
+        .section {
+            padding: 100px 4%;
+        }
+
+        .section-light {
+            background: #F4F7FA;
+            color: var(--navy);
+        }
+
+        .section-dark {
+            background:
+                linear-gradient(
+                    180deg,
+                    #09172A,
+                    #071426
+                );
+        }
+
+        .section-container {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            max-width: 770px;
+            margin: 0 auto 58px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: block;
+            margin-bottom: 11px;
+
+            color: var(--blue-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .section-dark .section-label {
+            color: var(--blue-light);
+        }
+
+        .section-title {
+            margin-bottom: 18px;
+
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.12;
+            letter-spacing: -1.4px;
+            font-weight: 800;
+        }
+
+        .section-description {
+            color: var(--grey-dark);
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .section-dark .section-description {
+            color: var(--metal);
+        }
+
+        /* ============================================================
+           DIFERENCIAÇÃO
+        ============================================================ */
+
+        .difference-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .difference-statement {
+            padding-left: 24px;
+            border-left: 4px solid var(--blue);
+        }
+
+        .difference-statement h3 {
+            margin-bottom: 17px;
+            font-size: clamp(27px, 3vw, 40px);
+            line-height: 1.2;
+            color: var(--navy);
+        }
+
+        .difference-statement p {
+            color: var(--grey-dark);
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .difference-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px;
+        }
+
+        .difference-card {
+            min-height: 180px;
+            padding: 25px;
+
+            border-radius: 14px;
+            border: 1px solid #DCE6EF;
+
+            background: var(--white);
+
+            box-shadow:
+                0 13px 40px rgba(15, 23, 42, 0.06);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .difference-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 18px 45px rgba(15, 23, 42, 0.10);
+        }
+
+        .card-number {
+            margin-bottom: 13px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .difference-card h4 {
+            margin-bottom: 9px;
+            font-size: 19px;
+            color: var(--navy);
+        }
+
+        .difference-card p {
+            color: var(--grey-dark);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* ============================================================
+           PROGRAMA
+        ============================================================ */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .program-card {
+            min-height: 250px;
+            padding: 25px;
+
+            border-radius: 14px;
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(22, 37, 61, 0.74),
+                    rgba(15, 23, 42, 0.60)
+                );
+
+            transition:
+                transform 0.25s ease,
+                border 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.58);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25, 55, 89, 0.85),
+                    rgba(15, 23, 42, 0.72)
+                );
+        }
+
+        .program-icon {
+            width: 43px;
+            height: 43px;
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+            background: rgba(0, 174, 239, 0.11);
+            border: 1px solid rgba(56, 189, 248, 0.20);
+
+            color: var(--blue-light);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .program-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .program-card p {
+            color: var(--grey);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* ============================================================
+           PÚBLICO-ALVO
+        ============================================================ */
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .audience-item {
+            min-height: 100px;
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            border-radius: 12px;
+            border: 1px solid #DCE6EF;
+
+            background: var(--white);
+        }
+
+        .audience-marker {
+            width: 31px;
+            height: 31px;
+            flex: 0 0 31px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+            background: #E0F4FC;
+            color: var(--blue-dark);
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .audience-item span:last-child {
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        /* ============================================================
+           RESULTADOS
+        ============================================================ */
+
+        .outcomes-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .outcomes-highlight {
+            padding: 38px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0, 174, 239, 0.17),
+                    rgba(15, 23, 42, 0.30)
+                );
+
+            border: 1px solid rgba(56, 189, 248, 0.26);
+        }
+
+        .outcomes-highlight h3 {
+            margin-bottom: 17px;
+
+            font-size: clamp(27px, 3.2vw, 42px);
+            line-height: 1.15;
+        }
+
+        .outcomes-highlight p {
+            color: var(--metal);
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .outcomes-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .outcome {
+            padding: 17px 19px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            border-radius: 11px;
+            border: 1px solid rgba(203, 213, 225, 0.12);
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .outcome-check {
+            width: 27px;
+            height: 27px;
+            flex: 0 0 27px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(16, 185, 129, 0.12);
+            color: #6EE7B7;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .outcome strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+
+        .outcome p {
+            color: var(--grey);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        /* ============================================================
+           LANÇAMENTO FINAL
+        ============================================================ */
+
+        .launch-section {
+            padding: 110px 4%;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(0, 174, 239, 0.18),
+                    transparent 42%
+                ),
+                linear-gradient(
+                    135deg,
+                    #071426,
+                    #0A2442
+                );
+        }
+
+        .launch-content {
+            width: min(820px, 100%);
+            margin: 0 auto;
+        }
+
+        .launch-content h2 {
+            margin-bottom: 18px;
+
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .launch-final-date {
+            margin-bottom: 22px;
+            color: var(--blue-light);
+            font-size: clamp(27px, 4vw, 42px);
+            font-weight: 800;
+        }
+
+        .launch-content p {
+            max-width: 635px;
+            margin: 0 auto 33px;
+
+            color: var(--metal);
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .construction-message {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px 17px;
+
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            background: rgba(56, 189, 248, 0.07);
+
+            color: var(--cyan-soft);
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           RODAPÉ
+        ============================================================ */
+
+        footer {
+            padding: 38px 4%;
+            border-top: 1px solid rgba(203, 213, 225, 0.10);
+            background: #050F1E;
+        }
+
+        .footer-container {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-brand {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .footer-tagline {
+            margin-top: 5px;
+            color: var(--grey);
+            font-size: 12px;
+        }
+
+        .footer-copy {
+            color: var(--grey);
+            font-size: 12px;
+            text-align: right;
+        }
+
+        /* ============================================================
+           ANIMAÇÕES
+        ============================================================ */
+
+        @keyframes enterUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            animation: enterUp 0.75s ease both;
+        }
+
+        .launch-panel {
+            animation: enterUp 0.85s 0.12s ease both;
+        }
+
+        /* ============================================================
+           RESPONSIVIDADE PARA TABLET
+        ============================================================ */
+
+        @media (max-width: 980px) {
+
+            .navigation-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 120px;
+            }
+
+            .hero-container,
+            .difference-layout,
+            .outcomes-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-container {
+                gap: 48px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .status-badge {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .launch-panel {
+                width: min(560px, 100%);
+                margin: 0 auto;
+            }
+
+            .program-grid,
+            .audience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVIDADE PARA TELEMÓVEL
+        ============================================================ */
+
+        @media (max-width: 620px) {
+
+            .navigation-container {
+                min-height: 68px;
+            }
+
+            .logo-symbol {
+                width: 38px;
+                height: 38px;
+                flex-basis: 38px;
+            }
+
+            .logo-name {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .logo-academy {
+                font-size: 8px;
+                letter-spacing: 2.3px;
+            }
+
+            .hero {
+                padding:
+                    108px 20px
+                    64px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .launch-panel {
+                padding: 25px 18px;
+            }
+
+            .countdown {
+                gap: 6px;
+            }
+
+            .countdown-item {
+                padding:
+                    12px 3px
+                    10px;
+            }
+
+            .countdown-number {
+                font-size: 22px;
+            }
+
+            .countdown-text {
+                font-size: 8px;
+                letter-spacing: 0.3px;
+            }
+
+            .section {
+                padding: 75px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .difference-cards,
+            .program-grid,
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .difference-layout,
+            .outcomes-layout {
+                gap: 42px;
+            }
+
+            .difference-card,
+            .program-card {
+                min-height: auto;
+            }
+
+            .outcomes-highlight {
+                padding: 28px 23px;
+            }
+
+            .launch-section {
+                padding: 85px 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-copy {
+                text-align: center;
+            }
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-  <div class="hero">
+    <!-- Fundo decorativo -->
 
-    <div class="logo">
-      FACTORY INTELLIGENCE ACADEMY
-    </div>
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-    <div class="brand">
-      Data-Driven Academy
-    </div>
+    <!-- ============================================================
+         NAVEGAÇÃO
+    ============================================================ -->
 
-    <div class="tagline">
-      Transforming Factory Data into Business Decisions
-    </div>
+    <nav class="navigation">
 
-    <div class="course">
-      POWER BI FOR MANUFACTURING
-    </div>
+        <div class="navigation-container">
 
-    <div class="subtitle">
-      From Factory Data to Management Decisions
-    </div>
+            #home
 
-    <div class="launch">
-      Course Launch
-    </div>
+                <div class="logo-symbol">
 
-    <div class="date">
-      01 October 2026
-    </div>
+                    <div class="logo-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
 
-    <div id="counter" class="counter">
-      Loading...
-    </div>
+                </div>
 
-    <div class="note">
-      Site under construction.<br>
-      Registrations opening soon.
-    </div>
+                <div class="logo-text">
 
-  </div>
+                    <span class="logo-name">
+                        Factory Intelligence
+                    </span>
 
-  <script>
-    const launchDate = new Date("2026-10-01T00:00:00").getTime();
+                    <span class="logo-academy">
+                        Academy
+                    </span>
 
-    function updateCounter() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
+                </div>
 
-      if (distance <= 0) {
-        document.getElementById("counter").innerHTML = "COURSE NOW AVAILABLE";
-        return;
-      }
+            </a>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            <div class="navigation-links">
 
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
+                #difference
+                    Why This Program
+                </a>
 
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
+                #program
+                    Program
+                </a>
 
-      document.getElementById("counter").innerHTML =
-        days + " Days • " +
-        hours + " Hours • " +
-        minutes + " Minutes";
-    }
+                #audience
+                    Who Should Attend
+                </a>
 
-    updateCounter();
-    setInterval(updateCounter, 60000);
-  </script>
+                #launch
+                    Launch
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+
+    <header
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <div class="status-badge">
+
+                    <span class="status-dot"></span>
+
+                    Website and program under development
+
+                </div>
+
+                <div class="hero-eyebrow">
+                    Factory Intelligence Academy presents
+                </div>
+
+                <h1>
+
+                    Power BI for
+
+                    <span class="highlight">
+                        Manufacturing
+                    </span>
+
+                </h1>
+
+                <p class="hero-subtitle">
+                    From Factory Data to Management Decisions
+                </p>
+
+                <p class="hero-description">
+
+                    A practical, industry-focused professional program
+                    designed to transform production, logistics, quality
+                    and maintenance data into centralized management
+                    information and actionable business decisions.
+
+                </p>
+
+                <div class="hero-actions">
+
+                    #program
+
+                        Explore the Program
+
+                        <span class="arrow">
+                            ↓
+                        </span>
+
+                    </a>
+
+                    #difference
+                        Why It Is Different
+                    </a>
+
+                </div>
+
+            </div>
+
+            <aside class="launch-panel">
+
+                <span class="launch-label">
+                    Official course launch
+                </span>
+
+                <div class="launch-date">
+                    01 October 2026
+                </div>
+
+                <div class="launch-note">
+                    Complete program available soon
+                </div>
+
+                <div class="countdown-heading">
+                    Time until launch
+                </div>
+
+                <div
+                    class="countdown"
+                    id="countdown"
+                    aria-label="Countdown to course launch"
+                >
+
+                    <div class="countdown-item">
+
+                        <span
+                            class="countdown-number"
+                            id="days"
+                        >
+                            00
+                        </span>
+
+                        <span class="countdown-text">
+                            Days
+                        </span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span
+                            class="countdown-number"
+                            id="hours"
+                        >
+                            00
+                        </span>
+
+                        <span class="countdown-text">
+                            Hours
+                        </span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span
+                            class="countdown-number"
+                            id="minutes"
+                        >
+                            00
+                        </span>
+
+                        <span class="countdown-text">
+                            Minutes
+                        </span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span
+                            class="countdown-number"
+                            id="seconds"
+                        >
+                            00
+                        </span>
+
+                        <span class="countdown-text">
+                            Seconds
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="panel-divider"></div>
+
+                <div class="panel-features">
+
+                    <div class="panel-feature">
+
+                        <span class="panel-check">
+                            ✓
+                        </span>
+
+                        Practical manufacturing use cases
+
+                    </div>
+
+                    <div class="panel-feature">
+
+                        <span class="panel-check">
+                            ✓
+                        </span>
+
+                        Production, logistics, quality and maintenance
+
+                    </div>
+
+                    <div class="panel-feature">
+
+                        <span class="panel-check">
+                            ✓
+                        </span>
+
+                        Built around real management decisions
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </header>
+
+    <!-- ============================================================
+         PORQUE É DIFERENTE
+    ============================================================ -->
+
+    <section
+        class="section section-light"
+        id="difference"
+    >
+
+        <div class="section-container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    A different approach
+                </span>
+
+                <h2 class="section-title">
+                    More Than a Power BI Course
+                </h2>
+
+                <p class="section-description">
+
+                    This program is designed around operational knowledge,
+                    data quality and management decisions, rather than
+                    simply teaching software menus and isolated charts.
+
+                </p>
+
+            </div>
+
+            <div class="difference-layout">
+
+                <div class="difference-statement">
+
+                    <h3>
+                        The value is not only in the tool.
+                    </h3>
+
+                    <p>
+
+                        The value is in understanding how information flows
+                        through an organization, how industrial indicators
+                        are defined and how reliable dashboards support
+                        faster and more consistent decisions.
+
+                    </p>
+
+                </div>
+
+                <div class="difference-cards">
+
+                    <article class="difference-card">
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+                        <h4>
+                            Operational Experience
+                        </h4>
+
+                        <p>
+
+                            Concepts connected to real production,
+                            logistics, quality, maintenance and continuous
+                            improvement challenges.
+
+                        </p>
+
+                    </article>
+
+                    <article class="difference-card">
+
+                        <div class="card-number">
+                            02
+                        </div>
+
+                        <h4>
+                            Data Quality First
+                        </h4>
+
+                        <p>
+
+                            Learn to identify errors, inconsistencies,
+                            duplicates and missing information before
+                            building management indicators.
+
+                        </p>
+
+                    </article>
+
+                    <article class="difference-card">
+
+                        <div class="card-number">
+                            03
+                        </div>
+
+                        <h4>
+                            Centralized Information
+                        </h4>
+
+                        <p>
+
+                            Build a structured and reliable model that
+                            replaces disconnected spreadsheets with a
+                            common view of operational performance.
+
+                        </p>
+
+                    </article>
+
+                    <article class="difference-card">
+
+                        <div class="card-number">
+                            04
+                        </div>
+
+                        <h4>
+                            Management Decisions
+                        </h4>
+
+                        <p>
+
+                            Move from visualizing historical data to
+                            identifying deviations, understanding causes
+                            and supporting concrete actions.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         PROGRAMA
+    ============================================================ -->
+
+    <section
+        class="section section-dark"
+        id="program"
+    >
+
+        <div class="section-container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    Course framework
+                </span>
+
+                <h2 class="section-title">
+                    What You Will Learn
+                </h2>
+
+                <p class="section-description">
+
+                    A complete learning journey from raw operational data
+                    to an integrated information system prepared for
+                    management analysis.
+
+                </p>
+
+            </div>
+
+            <div class="program-grid">
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Business Requirements
+                    </h3>
+
+                    <p>
+
+                        Define the decisions, business questions,
+                        indicators, data sources and expected outcomes
+                        before starting the report.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Power Query
+                    </h3>
+
+                    <p>
+
+                        Connect, clean, combine and transform Excel,
+                        CSV, database and operational data through
+                        repeatable processes.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Data Quality
+                    </h3>
+
+                    <p>
+
+                        Create visible controls for missing values,
+                        duplicates, rejected records and failed
+                        data relationships.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        Data Modelling
+                    </h3>
+
+                    <p>
+
+                        Build clear fact and dimension tables using
+                        a star schema designed for reliable analysis.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        05
+                    </div>
+
+                    <h3>
+                        DAX and Measures
+                    </h3>
+
+                    <p>
+
+                        Develop reusable calculations, comparison
+                        measures, time intelligence and industrial
+                        performance indicators.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        06
+                    </div>
+
+                    <h3>
+                        Industrial KPI
+                    </h3>
+
+                    <p>
+
+                        Work with production, quality, logistics,
+                        maintenance, reliability and operational
+                        performance metrics.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        07
+                    </div>
+
+                    <h3>
+                        Dashboard Design
+                    </h3>
+
+                    <p>
+
+                        Create clear executive pages with visual
+                        hierarchy, useful navigation and information
+                        that supports action.
+
+                    </p>
+
+                </article>
+
+                <article class="program-card">
+
+                    <div class="program-icon">
+                        08
+                    </div>
+
+                    <h3>
+                        Publishing and Governance
+                    </h3>
+
+                    <p>
+
+                        Understand workspaces, access, refresh,
+                        security and the responsibilities associated
+                        with delivering trusted information.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         PÚBLICO-ALVO
+    ============================================================ -->
+
+    <section
+        class="section section-light"
+        id="audience"
+    >
+
+        <div class="section-container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    Professional development
+                </span>
+
+                <h2 class="section-title">
+                    Who Should Attend
+                </h2>
+
+                <p class="section-description">
+
+                    Designed for professionals who need to understand,
+                    centralize and communicate operational information
+                    more effectively.
+
+                </p>
+
+            </div>
+
+            <div class="audience-grid">
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        P
+                    </span>
+
+                    <span>
+                        Production Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        L
+                    </span>
+
+                    <span>
+                        Logistics Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        Q
+                    </span>
+
+                    <span>
+                        Quality Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        M
+                    </span>
+
+                    <span>
+                        Maintenance Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        CI
+                    </span>
+
+                    <span>
+                        Continuous Improvement Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        O
+                    </span>
+
+                    <span>
+                        Operations Managers
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        BI
+                    </span>
+
+                    <span>
+                        Business Intelligence Professionals
+                    </span>
+
+                </div>
+
+                <div class="audience-item">
+
+                    <span class="audience-marker">
+                        D
+                    </span>
+
+                    <span>
+                        Data Analysts
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         RESULTADOS
+    ============================================================ -->
+
+    <section class="section section-dark">
+
+        <div class="section-container">
+
+            <div class="outcomes-layout">
+
+                <div class="outcomes-highlight">
+
+                    <span class="section-label">
+                        The expected transformation
+                    </span>
+
+                    <h3>
+                        From fragmented data to trusted information.
+                    </h3>
+
+                    <p>
+
+                        The objective is to help professionals create
+                        an information environment that supports a
+                        common understanding of operational performance
+                        across different functions.
+
+                    </p>
+
+                </div>
+
+                <div class="outcomes-list">
+
+                    <div class="outcome">
+
+                        <span class="outcome-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Reduce manual reporting activities
+                            </strong>
+
+                            <p>
+                                Replace repetitive spreadsheet preparation
+                                with structured and repeatable data processes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="outcome">
+
+                        <span class="outcome-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Improve confidence in indicators
+                            </strong>
+
+                            <p>
+                                Make definitions, transformations and
+                                data-quality limitations more transparent.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="outcome">
+
+                        <span class="outcome-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Centralize operational information
+                            </strong>
+
+                            <p>
+                                Bring data from different operational areas
+                                into a consistent analytical structure.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="outcome">
+
+                        <span class="outcome-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Communicate more effectively
+                            </strong>
+
+                            <p>
+                                Present performance, trends, deviations and
+                                priorities in a clear management format.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="outcome">
+
+                        <span class="outcome-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Support faster decisions
+                            </strong>
+
+                            <p>
+                                Turn operational data into information that
+                                helps teams identify where action is needed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         LANÇAMENTO
+    ============================================================ -->
+
+    <section
+        class="launch-section"
+        id="launch"
+    >
+
+        <div class="launch-content">
+
+            <span class="section-label">
+                Factory Intelligence Academy
+            </span>
+
+            <h2>
+                The Program Is Coming Soon
+            </h2>
+
+            <div class="launch-final-date">
+                01 October 2026
+            </div>
+
+            <p>
+
+                The complete program structure, module information
+                and participation details are currently being prepared.
+                This website will be updated as the official launch
+                date approaches.
+
+            </p>
+
+            <div class="construction-message">
+                Website under construction
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         RODAPÉ
+    ============================================================ -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+
+                <div class="footer-brand">
+                    Factory Intelligence Academy
+                </div>
+
+                <div class="footer-tagline">
+                    Transforming Factory Data into Business Decisions
+                </div>
+
+            </div>
+
+            <div class="footer-copy">
+
+                © <span id="current-year"></span>
+                Factory Intelligence Academy.
+                All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT
+    ============================================================ -->
+
+    <script>
+
+        /*
+         * Data de lançamento:
+         * 01 de outubro de 2026, às 00:00
+         */
+
+        const launchDate =
+            new Date("2026-10-01T00:00:00").getTime();
+
+        function formatNumber(number) {
+
+            return String(number).padStart(2, "0");
+
+        }
+
+        function updateCountdown() {
+
+            const now = new Date().getTime();
+
+            const distance = launchDate - now;
+
+            if (distance <= 0) {
+
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+
+                return;
+
+            }
+
+            const days = Math.floor(
+                distance / (1000 * 60 * 60 * 24)
+            );
+
+            const hours = Math.floor(
+                (
+                    distance %
+                    (1000 * 60 * 60 * 24)
+                ) /
+                (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (
+                    distance %
+                    (1000 * 60 * 60)
+                ) /
+                (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (
+                    distance %
+                    (1000 * 60)
+                ) /
+                1000
+            );
+
+            document.getElementById("days").textContent =
+                formatNumber(days);
+
+            document.getElementById("hours").textContent =
+                formatNumber(hours);
+
+            document.getElementById("minutes").textContent =
+                formatNumber(minutes);
+
+            document.getElementById("seconds").textContent =
+                formatNumber(seconds);
+
+        }
+
+        /*
+         * Atualiza o contador imediatamente
+         * e depois a cada segundo.
+         */
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+
+        /*
+         * Atualiza automaticamente o ano no rodapé.
+         */
+
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
 
