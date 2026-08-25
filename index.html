@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Factory Intelligence Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0F172A;
+      color: white;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: #38BDF8;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .brand {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .tagline {
+      font-size: 22px;
+      color: #CBD5E1;
+      margin-bottom: 50px;
+    }
+
+    .course {
+      font-size: 42px;
+      font-weight: 700;
+      color: #00AEEF;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .launch {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .date {
+      font-size: 42px;
+      font-weight: bold;
+      color: #38BDF8;
+      margin-bottom: 40px;
+    }
+
+    .counter {
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #00AEEF;
+      color: white;
+      padding: 18px 35px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #0284C7;
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 40px;
+      color: #94A3B8;
+    }
+
+    @media (max-width: 700px) {
+      .brand {
+        font-size: 38px;
+      }
+
+      .course {
+        font-size: 30px;
+      }
+
+      .tagline {
+        font-size: 18px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .date {
+        font-size: 32px;
+      }
+
+      .counter {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+
+    <div class="logo">
+      FACTORY INTELLIGENCE ACADEMY
+    </div>
+
+    <div class="brand">
+      Data-Driven Academy
+    </div>
+
+    <div class="tagline">
+      Transforming Factory Data into Business Decisions
+    </div>
+
+    <div class="course">
+      POWER BI FOR MANUFACTURING
+    </div>
+
+    <div class="subtitle">
+      From Factory Data to Management Decisions
+    </div>
+
+    <div class="launch">
+      Course Launch
+    </div>
+
+    <div class="date">
+      01 October 2026
+    </div>
+
+    <div id="counter" class="counter">
+      Loading...
+    </div>
+
+    <div class="note">
+      Site under construction.<br>
+      Registrations opening soon.
+    </div>
+
+  </div>
+
+  <script>
+    const launchDate = new Date("2026-10-01T00:00:00").getTime();
+
+    function updateCounter() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("counter").innerHTML = "COURSE NOW AVAILABLE";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+
+      document.getElementById("counter").innerHTML =
+        days + " Days • " +
+        hours + " Hours • " +
+        minutes + " Minutes";
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 60000);
+  </script>
+
+</body>
+
+</html>
